@@ -429,3 +429,9 @@ img{
 		box-shadow: inset 80px 60px 120px black, inset -80px -60px 120px black;
 	}
 }
+
+@media screen and (max-width: 500px) {
+	.showcase::after{
+		box-shadow: inset 20px 10px 80px black, inset -20px -10px 80px black;
+	}
+}
