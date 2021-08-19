@@ -14,6 +14,7 @@ body{
 	--webkit-font-smoothing: antialiased;
 	background: black;
 	color: gray;
+	overflow-x: hidden !important;
 }
 
 ul{
@@ -114,15 +115,24 @@ img{
 	border-bottom: 3px solid #3d3d3d;
 }
 
+#tab-1-content,
+#tab-2-content,
+#tab-3-content{
+	display: none;
+}
+
+.show{
+	display: block !important;
+}
+
 .tab-icon{
 	font-size: 55px;
 }
 
 .tabs .container{
-	width: 70%;
+	max-width: 70%;
 	margin: 0 auto;
 	display: flex;
-	justify-content: space-around;
 	text-align: center;
 }
 
@@ -132,12 +142,122 @@ img{
 
 .tabs .container div{
 	padding: 1.5rem 0;
+	width: calc(100%/ 3);
+}
+
+.tab-content-item{
+	width: 80%;
+	margin: 0 auto;
+}
+
+#tab-1-content > div{
+	width: 80%;
+	display: flex;
+	align-items: center;
+	padding-top: 100px;
+	margin: 0 auto;
+}
+
+.tab-2-content-top{
+	width: 80%;
+	margin: 0 auto;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding-top: 60px;
+}
+
+.tab-2-content-top p{
+	float: left;
+	font-size: 27px;
+	color: white;
+}
+
+.tab-2-content-bottom{
+	width: 80%;
+	margin: 50px auto;
+	display: flex;
+	justify-content: space-evenly;
+	text-align: center;
+}
+
+.tab-2-content-bottom img{
+	width: calc(85%);
+}
+
+
+.tab-border{
+	border-bottom:  3px solid var(--red-color);
+	
 }
 
 .tabs .container div:hover{
 	color: white;
 	cursor: pointer;
 }
+
+.cancel-img{
+	width: 40%;
+	height: auto;
+}
+
+
+.table{
+	width: 65%;
+	margin: 50px auto 0 auto;
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+.table thead th{
+	text-transform: uppercase;
+	color: white;
+	font-weight: 600;
+	padding-bottom: 9px;
+}
+
+.table tbody tr td{
+	color: #999;
+	padding: 15px 22px;
+	text-align: center;
+}
+
+.table tbody tr td:first-child{
+	text-align: left;
+}
+
+.table tbody tr:nth-child(2n+1){
+	background: #222;
+}
+
+/* TEXT STYLES*/
+
+.text-xl{
+	font-size: 2rem;
+	margin-bottom: 1rem;
+	color: #fff;
+}
+
+.text-lg{
+	font-size: 1.8rem;
+	margin-bottom: 1rem;
+	color: #fff;
+}
+
+.text-md{
+	color: white;
+	font-size: 20px;
+}
+
+.text-center{
+	text-align: center;
+}
+
+.text-dark{
+	color: #999;
+}
+
+
 /*Button*/
 
 .btn{
@@ -164,8 +284,8 @@ img{
 }
 
 .btn-xl{
-	font-size: 2rem;
-	padding: 1.5rem 2.1rem;
+	font-size: 18px;
+	padding: 10px 15px;
 	text-transform: uppercase;
 }
 
@@ -175,3 +295,137 @@ img{
 	text-transform: uppercase;
 }
 
+.footer{
+	width: 75%;
+	max-width: 80%;
+	margin: 50px auto 0 auto;
+	overflow: hidden;
+}
+
+.footer-cols{
+	width: 100%;
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-template-rows: repeat (4, auto);
+}
+
+.footer li{
+	list-style: none;
+	margin: 3px 0;
+}
+
+.footer li a{
+	color: #999;
+	text-decoration: none;
+}
+
+@media screen and (max-width: 1252px){
+	.showcase-content h1{
+		font-size: 65px;
+	}
+
+	.showcase-content p {
+		font-size: 17px;
+		text-align: center;
+	}
+
+	.btn-lg{
+		font-size: 20px;
+	}
+}
+
+
+@media screen and (max-width: 960px){
+
+	.showcase-content h1{
+		font-size: 45px;
+		text-align: center;
+	}
+
+	.showcase-top img {
+		top: 20px;
+		left: 30px;
+		transform: translate(0);
+	}
+
+	.showcase{
+		height: 75vh;
+	}
+
+	.tabs .container p{
+		display: none;
+	}
+
+	.footer-cols{
+		grid-template-columns: repeat(2, 1fr);
+		justify-content: space-between;
+	}
+}
+
+@media screen and (max-width: 790px){
+	.showcase-top img {
+		width: 30%;
+	}
+
+	
+	.showcase-content h1 {
+		margin-bottom: 0;
+	}
+
+	.tab-1-content-inner {
+		display: block;
+	}
+
+	.cancel-img {
+		display: block;
+		margin: 20px auto 0 auto;
+		width: 65%;
+	}
+
+	.tab-2-content-top {
+		display: block;
+	}
+
+	.tab-2-content-bottom {
+		display: block;
+	}
+
+	.footer-cols{
+		grid-template-columns: repeat(1, 1fr);
+		grid-row-gap: 20px;
+	}
+
+	.footer-cols ul{
+		margin: auto;
+		padding-inline-start: 0;
+		margin-block-start: 0;
+	}
+
+	#tab-1-content > div{
+		display: block;
+	}
+
+	.text-lg {
+		font-size: 18px;
+	}
+
+	.tab-2-content-top p{
+		font-size: 18px;
+	}
+
+	.btn{
+		font-size: 15px;
+	}
+
+	.btn-lg{
+		padding: 7px;
+	}
+
+	.cancel-img{
+		width: 85%;
+	}
+
+	.showcase::after{
+		box-shadow: inset 80px 60px 120px black, inset -80px -60px 120px black;
+	}
+}
